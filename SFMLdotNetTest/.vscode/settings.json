@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "'D2Coding ligature'",
+    "editor.fontLigatures": true,
+    "editor.mouseWheelZoom": true,
+    "editor.formatOnType": true,
+    "terminal.integrated.fontFamily": "'D2Coding'"
+}

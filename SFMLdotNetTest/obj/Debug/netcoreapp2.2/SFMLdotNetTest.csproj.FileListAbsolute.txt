@@ -1,0 +1,11 @@
+D:\Personals\SFMLdotNetTest\bin\Debug\netcoreapp2.2\SFMLdotNetTest.deps.json
+D:\Personals\SFMLdotNetTest\bin\Debug\netcoreapp2.2\SFMLdotNetTest.runtimeconfig.json
+D:\Personals\SFMLdotNetTest\bin\Debug\netcoreapp2.2\SFMLdotNetTest.runtimeconfig.dev.json
+D:\Personals\SFMLdotNetTest\bin\Debug\netcoreapp2.2\SFMLdotNetTest.dll
+D:\Personals\SFMLdotNetTest\bin\Debug\netcoreapp2.2\SFMLdotNetTest.pdb
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.csprojAssemblyReference.cache
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.csproj.CoreCompileInputs.cache
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.AssemblyInfoInputs.cache
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.AssemblyInfo.cs
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.dll
+D:\Personals\SFMLdotNetTest\obj\Debug\netcoreapp2.2\SFMLdotNetTest.pdb
