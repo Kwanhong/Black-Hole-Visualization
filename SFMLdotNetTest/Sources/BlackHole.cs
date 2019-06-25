@@ -68,11 +68,11 @@ namespace BlackHoleVisualization
 
         private void DisplayPhotonDisk()
         {
-            CircleShape photonDisk = new CircleShape(this.Radious * 1.5f + 8, 32);
+            CircleShape photonDisk = new CircleShape(this.Radious * 1.5f + 16, 32);
             photonDisk.Origin = new Vector2f(photonDisk.Radius, photonDisk.Radius);
             photonDisk.Position = this.Position;
             photonDisk.FillColor = Color.Transparent;
-            photonDisk.OutlineThickness = 16;
+            photonDisk.OutlineThickness = 32;
             photonDisk.OutlineColor = new Color(42, 42, 42);
             window.Draw(photonDisk);
         }

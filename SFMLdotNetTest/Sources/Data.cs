@@ -13,9 +13,9 @@ namespace BlackHoleVisualization
         new RenderWindow
         (
             new VideoMode(WinSizeX, WinSizeY),
-            "BLACK HOLE VISUALIZATION",
-            Styles.Resize,
-            new ContextSettings(1, 1, 8)
+            WinTitleText,
+            WinLayoutStyle,
+            new ContextSettings(1, 1, WinAntialiasingLevel)
         );
     }
 }

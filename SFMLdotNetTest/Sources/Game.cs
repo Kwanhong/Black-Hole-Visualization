@@ -29,11 +29,12 @@ namespace BlackHoleVisualization
             blackHole = new BlackHole();
             particles = new List<Photon>();
 
-            var start = blackHole.Position.Y - 303.84f;
-            var end = blackHole.Position.Y - 299.304;
-            for (var y = start; y < end; y += 0.002f)
+            //var start = blackHole.Position.Y - 303.84f;
+            //var end = blackHole.Position.Y - 299.304;
+            var start = blackHole.Position.Y - WinSizeY / 2;
+            var end = blackHole.Position.Y + WinSizeY / 2;
+            for (var y = start; y < end; y += 1f)
                 particles.Add(new Photon(blackHole.Position.X + 640, y));
-
         }
 
         public void Run()
