@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Personals\\SFMLdotNetTest\\SFMLdotNetTest.csproj": {}
+    "D:\\Personals\\BlackHoleVisualization\\SFMLdotNetTest\\SFMLdotNetTest.csproj": {}
   },
   "projects": {
-    "D:\\Personals\\SFMLdotNetTest\\SFMLdotNetTest.csproj": {
+    "D:\\Personals\\BlackHoleVisualization\\SFMLdotNetTest\\SFMLdotNetTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Personals\\SFMLdotNetTest\\SFMLdotNetTest.csproj",
+        "projectUniqueName": "D:\\Personals\\BlackHoleVisualization\\SFMLdotNetTest\\SFMLdotNetTest.csproj",
         "projectName": "SFMLdotNetTest",
-        "projectPath": "D:\\Personals\\SFMLdotNetTest\\SFMLdotNetTest.csproj",
+        "projectPath": "D:\\Personals\\BlackHoleVisualization\\SFMLdotNetTest\\SFMLdotNetTest.csproj",
         "packagesPath": "C:\\Users\\KwanHong\\.nuget\\packages\\",
-        "outputPath": "D:\\Personals\\SFMLdotNetTest\\obj\\",
+        "outputPath": "D:\\Personals\\BlackHoleVisualization\\SFMLdotNetTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
