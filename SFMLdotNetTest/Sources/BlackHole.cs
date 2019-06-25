@@ -14,7 +14,7 @@ namespace BlackHoleVisualization
         public float Mass { get; set; }
         public float Radious { get; set; }
 
-        public BlackHole(float x = WinSizeX / 2f, float y = WinSizeY / 2f, float m = 3000)
+        public BlackHole(float x = WinSizeX / 2f, float y = WinSizeY / 2f, float m = 6000)
         {
             this.Position = new Vector2f(x, y);
             this.Mass = m;
@@ -43,7 +43,7 @@ namespace BlackHoleVisualization
             accretionDisk.Position = this.Position;
             accretionDisk.FillColor = Color.Transparent;
             accretionDisk.OutlineThickness = 32;
-            accretionDisk.OutlineColor = new Color(75, 75, 75);
+            accretionDisk.OutlineColor = new Color(60, 60, 60);
             window.Draw(accretionDisk);
 
             CircleShape photon = new CircleShape(this.Radious * 1.5f + 8, 32);
@@ -51,7 +51,7 @@ namespace BlackHoleVisualization
             photon.Position = this.Position;
             photon.FillColor = Color.Transparent;
             photon.OutlineThickness = 16;
-            photon.OutlineColor = new Color(100, 100, 100);
+            photon.OutlineColor = new Color(60, 60, 60);
             window.Draw(photon);
         }
     }

@@ -9,12 +9,12 @@ namespace BlackHoleVisualization
 {
     public static class Constants
     {
-        public const float C = 30; // 299792458f in real world;
-        public const float G = 06; // 0.00000006673f in real world;
+        public const float C = 30;
+        public const float G = 04;
         public const float DT = 0.1f;
 
-        public const uint WinSizeX = 640;
-        public const uint WinSizeY = 360;
+        public const uint WinSizeX = 1800;
+        public const uint WinSizeY = 960;
 
     }
 
@@ -25,7 +25,7 @@ namespace BlackHoleVisualization
         (
             new VideoMode(WinSizeX, WinSizeY),
             "BLACK HOLE VISUALIZATION",
-            Styles.Titlebar,
+            Styles.Resize,
             new ContextSettings(1, 1, 8)
         );
     }

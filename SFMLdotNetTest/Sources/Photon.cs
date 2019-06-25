@@ -30,9 +30,7 @@ namespace BlackHoleVisualization
             this.Position += DeltaVelocity;
 
             if (this.History.Count > 100)
-            {
                 History.RemoveAt(0);
-            }
         }
 
         public void Display()
@@ -45,10 +43,9 @@ namespace BlackHoleVisualization
             window.Draw(photon);
 
             VertexArray line = new VertexArray(PrimitiveType.Lines);
+            Color lineColor = new Color(255, 255, 255, 100);
             foreach (var pos in History)
-            {
-                line.Append(new Vertex(pos, Color.White));
-            }
+                line.Append(new Vertex(pos, lineColor));
             window.Draw(line);
         }
     }

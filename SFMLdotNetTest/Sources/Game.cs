@@ -29,10 +29,10 @@ namespace BlackHoleVisualization
             blackHole = new BlackHole();
             particles = new List<Photon>();
 
-            var start = 0f;
-            var end = WinSizeX / 2f - blackHole.Radious * 2.6f;
-            for (var y = start; y < end; y += 5f)
-                particles.Add(new Photon(WinSizeX - 20, y));
+            var start = WinSizeY *0.15f;
+            var end = WinSizeY *0.175f;//WinSizeY / 2f - blackHole.Radious * 2.6f;
+            for (var y = start; y < end; y += 0.1f)
+                particles.Add(new Photon(WinSizeX, y));
 
         }
 
