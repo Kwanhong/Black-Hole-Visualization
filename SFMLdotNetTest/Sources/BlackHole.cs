@@ -23,10 +23,11 @@ namespace BlackHoleVisualization
 
         public void Attract(Photon photon){
             Vector2f force = this.Position - photon.Position;
-            float distance = Magnitude(force);
+            float distance = GetMagnitude(force);
             float forceOfGravity = G * this.Mass / (distance * distance);
-            force//NORMALIZE
+            force = SetMagnitude(force, forceOfGravity);
             photon.Velocity += force;
+            photon.Velocity = Limit(photon.Velocity, C);
         }
 
         public void DisPlay(){
