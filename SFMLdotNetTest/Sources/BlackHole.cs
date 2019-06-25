@@ -24,6 +24,13 @@ namespace BlackHoleVisualization
         public void Attract(Photon photon){
             Vector2f force = this.Position - photon.Position;
             float distance = GetMagnitude(force);
+
+            if (distance < this.Radious)
+            {
+                photon.IsStopped = true;
+                photon.Position = this.Position + SetMagnitude(-force, this.Radious);
+            }
+
             float forceOfGravity = G * this.Mass / (distance * distance);
             force = SetMagnitude(force, forceOfGravity);
             photon.Velocity += force;
@@ -43,7 +50,7 @@ namespace BlackHoleVisualization
             accretionDisk.Position = this.Position;
             accretionDisk.FillColor = Color.Transparent;
             accretionDisk.OutlineThickness = 32;
-            accretionDisk.OutlineColor = new Color(60, 60, 60);
+            accretionDisk.OutlineColor = new Color(42, 42, 42);
             window.Draw(accretionDisk);
 
             CircleShape photon = new CircleShape(this.Radious * 1.5f + 8, 32);
@@ -51,7 +58,7 @@ namespace BlackHoleVisualization
             photon.Position = this.Position;
             photon.FillColor = Color.Transparent;
             photon.OutlineThickness = 16;
-            photon.OutlineColor = new Color(60, 60, 60);
+            photon.OutlineColor = new Color(42, 42, 42);
             window.Draw(photon);
         }
     }

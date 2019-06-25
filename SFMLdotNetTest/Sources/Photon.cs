@@ -13,6 +13,7 @@ namespace BlackHoleVisualization
         public Vector2f Position { get; set; }
         public Vector2f Velocity { get; set; }
         public List<Vector2f> History { get; set; }
+        public bool IsStopped { get; set; }
 
         public Photon(float x, float y)
         {
@@ -23,6 +24,8 @@ namespace BlackHoleVisualization
 
         public void Update()
         {
+            if (IsStopped) return;
+
             this.History.Add(this.Position);
 
             Vector2f DeltaVelocity = this.Velocity;
@@ -32,7 +35,7 @@ namespace BlackHoleVisualization
             if (this.History.Count > 100)
                 History.RemoveAt(0);
         }
-
+        
         public void Display()
         {
             CircleShape photon = new CircleShape(0.1f);
@@ -43,9 +46,12 @@ namespace BlackHoleVisualization
             window.Draw(photon);
 
             VertexArray line = new VertexArray(PrimitiveType.Lines);
-            Color lineColor = new Color(255, 255, 255, 100);
             foreach (var pos in History)
-                line.Append(new Vertex(pos, lineColor));
+            {
+                Color color = new Color(255, 255, 255, (byte)History.IndexOf(pos));
+                Vertex vertex = new Vertex(pos,color);
+                line.Append(vertex);
+            }
             window.Draw(line);
         }
     }

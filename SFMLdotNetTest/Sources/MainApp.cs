@@ -13,8 +13,8 @@ namespace BlackHoleVisualization
         public const float G = 04;
         public const float DT = 0.1f;
 
-        public const uint WinSizeX = 1800;
-        public const uint WinSizeY = 960;
+        public const uint WinSizeX = 1280;
+        public const uint WinSizeY = 720;
 
     }
 
