@@ -21,7 +21,8 @@ namespace BlackHoleVisualization
             this.Radious = (2 * G * this.Mass) / (C * C);
         }
 
-        public void Attract(Photon photon){
+        public void Attract(Photon photon)
+        {
             Vector2f force = this.Position - photon.Position;
             float distance = GetMagnitude(force);
 
@@ -37,14 +38,25 @@ namespace BlackHoleVisualization
             photon.Velocity = Limit(photon.Velocity, C);
         }
 
-        public void DisPlay(){
+        public void Display()
+        {
+            DisplayBlackHole();
+            DisplayAccretionDisk();
+            DisplayPhotonDisk();
+        }
+
+        private void DisplayBlackHole()
+        {
             CircleShape blackHole = new CircleShape(this.Radious);
             blackHole.Origin = new Vector2f(blackHole.Radius, blackHole.Radius);
             blackHole.Position = this.Position;
-            blackHole.FillColor = new Color(20, 20, 20);
+            blackHole.FillColor = new Color(40, 40, 40);
             blackHole.OutlineThickness = 0f;
             window.Draw(blackHole);
+        }
 
+        private void DisplayAccretionDisk()
+        {
             CircleShape accretionDisk = new CircleShape(this.Radious * 3 + 16, 64);
             accretionDisk.Origin = new Vector2f(accretionDisk.Radius, accretionDisk.Radius);
             accretionDisk.Position = this.Position;
@@ -52,14 +64,17 @@ namespace BlackHoleVisualization
             accretionDisk.OutlineThickness = 32;
             accretionDisk.OutlineColor = new Color(42, 42, 42);
             window.Draw(accretionDisk);
+        }
 
-            CircleShape photon = new CircleShape(this.Radious * 1.5f + 8, 32);
-            photon.Origin = new Vector2f(photon.Radius, photon.Radius);
-            photon.Position = this.Position;
-            photon.FillColor = Color.Transparent;
-            photon.OutlineThickness = 16;
-            photon.OutlineColor = new Color(42, 42, 42);
-            window.Draw(photon);
+        private void DisplayPhotonDisk()
+        {
+            CircleShape photonDisk = new CircleShape(this.Radious * 1.5f + 8, 32);
+            photonDisk.Origin = new Vector2f(photonDisk.Radius, photonDisk.Radius);
+            photonDisk.Position = this.Position;
+            photonDisk.FillColor = Color.Transparent;
+            photonDisk.OutlineThickness = 16;
+            photonDisk.OutlineColor = new Color(42, 42, 42);
+            window.Draw(photonDisk);
         }
     }
 }

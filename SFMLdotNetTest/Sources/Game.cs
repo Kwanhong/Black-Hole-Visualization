@@ -22,17 +22,17 @@ namespace BlackHoleVisualization
 
         public void Initialize()
         {
-            window.SetFramerateLimit(30);
+            window.SetFramerateLimit(60);
             window.Closed += OnClose;
             window.KeyPressed += OnKeyPressed;
 
             blackHole = new BlackHole();
             particles = new List<Photon>();
 
-            var start = WinSizeY * 0.078f;
-            var end = WinSizeY * 0.0843f;
+            var start = blackHole.Position.Y - 303.84f;
+            var end = blackHole.Position.Y - 299.304;
             for (var y = start; y < end; y += 0.002f)
-                particles.Add(new Photon(WinSizeX, y));
+                particles.Add(new Photon(blackHole.Position.X + 640, y));
 
         }
 
@@ -60,7 +60,7 @@ namespace BlackHoleVisualization
 
         public void Rneder()
         {
-            blackHole.DisPlay();
+            blackHole.Display();
 
             foreach (var particle in particles)
             {
