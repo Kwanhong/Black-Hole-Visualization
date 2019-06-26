@@ -55,5 +55,9 @@ namespace BlackHoleVisualization
             if (var > max) var = max;
             return var;
         }
+
+        public static float Distnace(Vector2f pos1, Vector2f pos2) {
+            return MathF.Sqrt(MathF.Pow(pos1.X - pos2.X, 2) + MathF.Pow(pos1.Y - pos2.Y, 2));
+        }
     }
 }
