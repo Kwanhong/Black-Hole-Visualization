@@ -39,6 +39,7 @@ namespace BlackHoleVisualization
             }
         }
 
+        #region Instructor
         public Photon(float x, float y)
         {
             this.Velocity = new Vector2f(-C, 0);
@@ -66,6 +67,7 @@ namespace BlackHoleVisualization
             this.Position = new Vector2f(x, y);
             this.History = new List<Vector2f>();
         }
+        #endregion
 
         public void Update()
         {
@@ -95,14 +97,14 @@ namespace BlackHoleVisualization
             if (this.IsDisappeared) return;
 
             DisplayPhoton();
-            DisplayHistory();
+            //DisplayHistory();
         }
 
         private void DisplayPhoton()
         {
             CircleShape photon = new CircleShape(0.1f);
             photon.Origin = new Vector2f(photon.Radius, photon.Radius);
-            photon.OutlineThickness = (History.Count * 0.01f);
+            photon.OutlineThickness = (History.Count * 0.005f);
             photon.OutlineColor = new Color(255, 255, 255, (byte)(History.Count * 2.55f));
             photon.FillColor = new Color(255, 255, 255, (byte)(History.Count * 2.55f));
             photon.Position = this.Position;

@@ -23,7 +23,7 @@ namespace BlackHoleVisualization
 
         public void Initialize()
         {
-            window.SetFramerateLimit(60);
+            window.SetFramerateLimit(20);
             window.Closed += OnClose;
             window.KeyPressed += OnKeyPressed;
             window.MouseMoved += OnMouseMoved;
@@ -41,19 +41,98 @@ namespace BlackHoleVisualization
 
             particles.Clear();
 
-            var start = blackHole.Position.Y + WinSizeY * 0;
-            var end = blackHole.Position.Y + WinSizeY * 0.5f;
-            for (var y = start; y < end; y += 1)
-                particles.Add(new Photon(blackHole.Position.X + 640, y));
+            Random rnd = new Random();
+            var count = 50;
 
-            start = blackHole.Position.Y + WinSizeY * -0.5f;
-            end = blackHole.Position.Y + WinSizeY * -0;
-            for (var y = start; y < end; y += 1)
+            var X = 640;
+            var Y = 300;
+            for (var i = 0; i < count; i++)
             {
-                var pos = new Vector2f(blackHole.Position.X - 640, y);
-                var vel = new Vector2f(C, 0);
-                particles.Add(new Photon(pos, vel));
+                var pos = blackHole.Position + new Vector2f(X, Y);
+
+                var vel = new Vector2f(-C, 0);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
             }
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(MathF.Cos(124.87f) * X - MathF.Sin(124.87f) * Y, MathF.Sin(124.87f) * X + MathF.Cos(124.87f) * Y);
+
+                var vel = new Vector2f(-1, -1);
+                vel = SetMagnitude(vel, C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+
+
+            X = -300;
+            Y = +640;
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(X, Y);
+                var vel = new Vector2f(0, -C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(MathF.Cos(124.87f) * X - MathF.Sin(124.87f) * Y, MathF.Sin(124.87f) * X + MathF.Cos(124.87f) * Y);
+
+                var vel = new Vector2f(1, -1);
+                vel = SetMagnitude(vel, C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+
+
+            X = -640;
+            Y = -300;
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(X, Y);
+                var vel = new Vector2f(C, 0);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(MathF.Cos(124.87f) * X - MathF.Sin(124.87f) * Y, MathF.Sin(124.87f) * X + MathF.Cos(124.87f) * Y);
+
+                var vel = new Vector2f(1, 1);
+                vel = SetMagnitude(vel, C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+
+
+            X = +300;
+            Y = -640;
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(X, Y);
+                var vel = new Vector2f(0, C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+            for (var i = 0; i < count; i++)
+            {
+                var pos = blackHole.Position + new Vector2f(MathF.Cos(124.87f) * X - MathF.Sin(124.87f) * Y, MathF.Sin(124.87f) * X + MathF.Cos(124.87f) * Y);
+
+                var vel = new Vector2f(-1, 1);
+                vel = SetMagnitude(vel, C);
+                var offset = new Vector2f((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f);
+                offset = SetMagnitude(offset, rnd.Next(10));
+                particles.Add(new Photon(pos + offset, vel));
+            }
+
+
         }
 
         public void Run()
