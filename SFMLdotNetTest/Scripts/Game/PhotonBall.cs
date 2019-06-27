@@ -12,7 +12,6 @@ namespace BlackHoleVisualization
 {
     public class PhotonBall
     {
-        Random rand = new Random();
         List<Photon> photonList;
 
         Vector2f position;
@@ -29,7 +28,7 @@ namespace BlackHoleVisualization
 
             this.position = new Vector2f(640, 300);
             this.velocity = new Vector2f(-C, 0);
-            
+
             this.radious = 50;
             this.count = 125;
         }
@@ -38,12 +37,13 @@ namespace BlackHoleVisualization
         {
             for (var i = 0; i < count; i++)
             {
+                var angle = Map(i, 0, count, 0, radious * 0.5f * MathF.PI);
                 var spread = new Vector2f
                 (
-                    (float)this.rand.NextDouble() - 0.5f,
-                    (float)this.rand.NextDouble() - 0.5f
+                    MathF.Cos(angle),
+                    MathF.Sin(angle)
                 );
-                spread = SetMagnitude(spread, this.rand.Next(radious));
+                spread = SetMagnitude(spread, Map(i, 0, count, 0, radious));
 
                 photonList.Add(new Photon(this.position + this.offset + spread, this.velocity));
             }

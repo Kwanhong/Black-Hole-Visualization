@@ -56,22 +56,29 @@ namespace BlackHoleVisualization
             return var;
         }
 
-        public static float Distnace(Vector2f pos1, Vector2f pos2) {
+        public static float Distnace(Vector2f pos1, Vector2f pos2)
+        {
             return MathF.Sqrt
             (
-                MathF.Pow(pos1.X - pos2.X, 2) + 
+                MathF.Pow(pos1.X - pos2.X, 2) +
                 MathF.Pow(pos1.Y - pos2.Y, 2)
             );
         }
 
-        public static Vector2f RotateVector(Vector2f vector, float angle) {
+        public static Vector2f RotateVector(Vector2f vector, float angle)
+        {
             return new Vector2f
             (
-                MathF.Cos(angle) * vector.X - 
-                MathF.Sin(angle) * vector.Y, 
-                MathF.Sin(angle) * vector.X + 
+                MathF.Cos(angle) * vector.X -
+                MathF.Sin(angle) * vector.Y,
+                MathF.Sin(angle) * vector.X +
                 MathF.Cos(angle) * vector.Y
             );
+        }
+
+        public static float Map(float value, float start1, float stop1, float start2, float stop2)
+        {
+            return ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2;
         }
     }
 }
