@@ -97,7 +97,7 @@ namespace BlackHoleVisualization
             if (this.IsDisappeared) return;
 
             DisplayPhoton();
-            //DisplayHistory();
+            DisplayHistory();
         }
 
         private void DisplayPhoton()
