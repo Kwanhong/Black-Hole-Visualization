@@ -29,8 +29,8 @@ namespace BlackHoleVisualization
             this.position = new Vector2f(640, 300);
             this.velocity = new Vector2f(-C, 0);
 
-            this.radious = 50;
-            this.count = 1000;
+            this.radious = 30;
+            this.count = 300;
         }
 
         public void Generate()

@@ -31,3 +31,14 @@ D:\Personals\BlackHoleVisualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTe
 D:\Personals\BlackHoleVisualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.AssemblyInfo.cs
 D:\Personals\BlackHoleVisualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.dll
 D:\Personals\BlackHoleVisualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.pdb
+C:\Works\Personal\BlackHoleVIsualization\Project\bin\Debug\netcoreapp2.2\SFMLdotNetTest.deps.json
+C:\Works\Personal\BlackHoleVIsualization\Project\bin\Debug\netcoreapp2.2\SFMLdotNetTest.runtimeconfig.json
+C:\Works\Personal\BlackHoleVIsualization\Project\bin\Debug\netcoreapp2.2\SFMLdotNetTest.runtimeconfig.dev.json
+c:\Works\Personal\BlackHoleVIsualization\Project\bin\Debug\netcoreapp2.2\SFMLdotNetTest.dll
+c:\Works\Personal\BlackHoleVIsualization\Project\bin\Debug\netcoreapp2.2\SFMLdotNetTest.pdb
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.csprojAssemblyReference.cache
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.csproj.CoreCompileInputs.cache
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.AssemblyInfoInputs.cache
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.AssemblyInfo.cs
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.dll
+c:\Works\Personal\BlackHoleVIsualization\Project\obj\Debug\netcoreapp2.2\SFMLdotNetTest.pdb
