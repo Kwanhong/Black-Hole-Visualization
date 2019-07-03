@@ -3,6 +3,7 @@ using SFML.Graphics;
 using SFML.Window;
 using System;
 using System.Collections.Generic;
+using static BlackHoleVisualization.Utility;
 using static BlackHoleVisualization.Constants;
 using static BlackHoleVisualization.Data;
 
@@ -27,7 +28,6 @@ namespace BlackHoleVisualization
                 );
             }
         }
-
         public bool IsDisappeared
         {
             get
@@ -38,6 +38,7 @@ namespace BlackHoleVisualization
                 this.History.Count <= 0;
             }
         }
+        private byte alphaOffset;
 
         #region Instructor
         public Photon(float x, float y)
@@ -45,6 +46,8 @@ namespace BlackHoleVisualization
             this.Velocity = new Vector2f(-C, 0);
             this.Position = new Vector2f(x, y);
             this.History = new List<Vector2f>();
+
+            alphaOffset = (byte)new Random().Next(100);
         }
 
         public Photon(Vector2f pos)
@@ -114,14 +117,24 @@ namespace BlackHoleVisualization
 
         private void DisplayHistory()
         {
-            VertexArray line = new VertexArray(PrimitiveType.Lines);
-            foreach (var pos in History)
+            // VertexArray line = new VertexArray(PrimitiveType.Lines);
+            // foreach (var pos in History)
+            // {
+            //     Color color = new Color(255, (byte)(History.IndexOf(pos) + 75), 100, (byte)History.IndexOf(pos));
+            //     Vertex vertex = new Vertex(pos, color);
+            //     line.Append(vertex);
+            // }
+            // window.Draw(line);
+
+            VertexArray line = new VertexArray(PrimitiveType.Lines, 2);
+            for (int i = 1; i < History.Count; i++)
             {
-                Color color = new Color(255, 255, 255, (byte)History.IndexOf(pos));
-                Vertex vertex = new Vertex(pos, color);
-                line.Append(vertex);
+                byte alpha = (byte)(Limit(MathF.Pow(Map(i, 0, 100, 0, 16), 2) - alphaOffset, 0, 255));
+                Color color = new Color(255, (byte)(i + 30), 75, alpha);
+                line[0] = new Vertex(History[i - 1], color);
+                line[1] = new Vertex(History[i], color);
+                window.Draw(line);
             }
-            window.Draw(line);
         }
     }
 }

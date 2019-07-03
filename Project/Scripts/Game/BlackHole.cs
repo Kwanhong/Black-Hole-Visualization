@@ -26,13 +26,13 @@ namespace BlackHoleVisualization
                 switch (mouseState)
                 {
                     case States.Idle:
-                        brightness = 39;
+                        brightness = 25;
                         break;
                     case States.HightLighted:
-                        brightness = 41;
+                        brightness = 27;
                         break;
                     case States.Pressed:
-                        brightness = 37;
+                        brightness = 20;
                         break;
                 }
             }
@@ -80,6 +80,7 @@ namespace BlackHoleVisualization
             blackHole.FillColor = new Color(brightness, brightness, brightness);
             blackHole.OutlineThickness = 0f;
             window.Draw(blackHole);
+            FadingOutline(ref blackHole, 10, 1.1f);
         }
 
         private void DisplayAccretionDisk()
@@ -91,6 +92,8 @@ namespace BlackHoleVisualization
             accretionDisk.OutlineThickness = 32;
             accretionDisk.OutlineColor = new Color(42, 42, 42);
             window.Draw(accretionDisk);
+            FadingOutline(ref accretionDisk);
+            FadingInline(ref accretionDisk);
         }
 
         private void DisplayPhotonDisk()
@@ -102,6 +105,32 @@ namespace BlackHoleVisualization
             photonDisk.OutlineThickness = 32;
             photonDisk.OutlineColor = new Color(42, 42, 42);
             window.Draw(photonDisk);
+            FadingOutline(ref photonDisk);
+            FadingInline(ref photonDisk);
         }
+
+        private void FadingOutline(ref CircleShape shape, int fadeLevel = 5, float scaleFactor = 1.25f){
+            CircleShape temp = new CircleShape(shape);
+            for (int i = 0; i < fadeLevel; i++) {
+                shape.Radius += i * scaleFactor;
+                shape.Origin =  new Vector2f(shape.Radius, shape.Radius);
+                shape.FillColor *= new Color(255, 255, 255, 200);
+                shape.OutlineColor *= new Color(255, 255, 255, 200);
+                window.Draw(shape);
+            }
+            shape = temp;
+        }
+        private void FadingInline(ref CircleShape shape, int fadeLevel = 5, float scaleFactor = 1.25f){
+            CircleShape temp = new CircleShape(shape);
+            for (int i = 0; i < fadeLevel; i++) {
+                shape.Radius -= i * scaleFactor;
+                shape.Origin =  new Vector2f(shape.Radius, shape.Radius);
+                shape.FillColor *= new Color(255, 255, 255, 200);
+                shape.OutlineColor *= new Color(255, 255, 255, 200);
+                window.Draw(shape);
+            }
+            shape = temp;
+        }
+
     }
 }

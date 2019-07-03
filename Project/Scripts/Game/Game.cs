@@ -23,7 +23,7 @@ namespace BlackHoleVisualization
 
         public void Initialize()
         {
-            window.SetFramerateLimit(20);
+            window.SetFramerateLimit(60);
             window.Closed += OnClose;
             window.KeyPressed += OnKeyPressed;
             window.MouseMoved += OnMouseMoved;
